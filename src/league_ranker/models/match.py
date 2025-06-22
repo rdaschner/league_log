@@ -1,4 +1,4 @@
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, field_validator
 from typing import Literal
 
 class MatchResult(BaseModel):
@@ -7,7 +7,8 @@ class MatchResult(BaseModel):
     team2: str
     score2: int
 
-    @validator('team1', 'team2')
+    @field_validator('team1', 'team2', mode='before')
+    @classmethod
     def validate_team_names(cls, v):
         return v.strip()
 

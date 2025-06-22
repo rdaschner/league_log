@@ -1,0 +1,32 @@
+[project]
+name = "league-ranker"
+version = "0.1.0"
+
+[project.scripts]
+league-ranker = "league_ranker.__main__:main"
+
+[build-system]
+requires = [ "poetry-core",]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "league-ranker"
+version = "0.1.0"
+description = "A FastAPI and CLI tool for ranking league teams based on match results."
+authors = [ "Your Name <you@example.com>",]
+
+[tool.pytest]
+addopts = "--strict-markers"
+testpaths = [ "tests",]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.110.0"
+uvicorn = "^0.29.0"
+pydantic = "^2.5.3"
+python-multipart = "^0.0.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.4.1"
+pytest-asyncio = "^0.23.6"
+anyio = "^4.3.0"

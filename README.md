@@ -23,7 +23,7 @@ python -m league_ranker.main --file sample_data/matches.txt
 ### 🌐 2. Run as FastAPI service
 
 ```bash
-uvicorn league_ranker.main:app --reload --port 5000 --app-dir src
+uvicorn league_ranker.api:app --reload --port 5000 --app-dir src
 ```
 
 ### 🎯 3. Test FastAPI Endpoints
@@ -70,23 +70,24 @@ Ensure you have `pytest` installed:
 pip install pytest
 ```
 
-# Actual Test 22/06/2025
+## ✅ Test Coverage Report – 22 June 2025
 
-tests\test_api.py .                                                                                                                                                           [ 20%]
-tests\test_cli.py .                                                                                                                                                           [ 40%]
-tests\test_league.py .                                                                                                                                                        [ 60%] 
-tests\test_match.py ..                                                                                                                                                        [100%]
+All tests passed successfully:
 
-================================================================================== tests coverage ================================================================================== 
-_________________________________________________________________ coverage: platform win32, python 3.12.8-final-0 __________________________________________________________________ 
+```bash
+tests/test_api.py      .    [ 20% ]
+tests/test_cli.py      .    [ 40% ]
+tests/test_league.py   .    [ 60% ]
+tests/test_match.py    ..   [100% ]
 
-Name                                   Stmts   Miss  Cover   Missing
---------------------------------------------------------------------
-src\league_ranker\__init__.py              0      0   100%
-src\league_ranker\api.py                  38     18    53%   21-22, 29-48
-src\league_ranker\main.py                 19     19     0%   2-24
-src\league_ranker\models\match.py         20      0   100%
-src\league_ranker\services\league.py      26      1    96%   12
---------------------------------------------------------------------
-TOTAL                                    103     38    63%
-================================================================================ 5 passed in 2.30s ================================================================================= 
+
+📊 Coverage Summary
+
+| File                                   | Stmts | Miss | Cover   | Missing Lines |
+| -------------------------------------- | ----- | ---- | ------- | ------------- |
+| `src/league_ranker/__init__.py`        | 0     | 0    | 100%    | –             |
+| `src/league_ranker/api.py`             | 38    | 18   | 53%     | 21-22, 29-48  |
+| `src/league_ranker/main.py`            | 19    | 19   | 0%      | 2-24          |
+| `src/league_ranker/models/match.py`    | 20    | 0    | 100%    | –             |
+| `src/league_ranker/services/league.py` | 26    | 1    | 96%     | 12            |
+| **Total**                              | 103   | 38   | **63%** |               |
